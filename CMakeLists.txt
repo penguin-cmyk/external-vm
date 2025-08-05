@@ -1,0 +1,124 @@
+cmake_minimum_required(VERSION 3.30)
+project(external_vm)
+set(CMAKE_CXX_STANDARD 20)
+
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+
+# I sometimes just include the header files for readability for building
+add_executable(
+        # Main dependencies
+        external_vm src/main.cpp
+        dependencies/mem/mem.hpp
+
+        ## rbx
+        src/rbx/datamodel.hpp
+        src/rbx/instance.hpp
+        src/env/functions/rbx/game.cpp
+        src/env/functions/rbx/instance.cpp
+
+        ## lua env classes (the c++ classes itself)
+        src/env/classes/cframe.hpp
+        src/env/classes/vector3.hpp
+
+        ## lua misc env function (functions that register the classes and add functionality)
+        src/env/functions/misc/cframe.cpp
+        src/env/functions/misc/vector3.cpp
+
+        ## lua env (this is for the definitions and initialization)
+        src/env/definitons.h
+        src/env/init.h
+
+        # ctx (context / globals)
+        src/ctx/globals.cpp
+        src/ctx/offsets.h
+
+        # gui (creating the d3d device and handling all the logic)
+        src/ui/gui.cpp
+        src/ui/themes.h
+
+        # imgui
+        dependencies/imgui/imgui.cpp
+        dependencies/imgui/imgui_draw.cpp
+        dependencies/imgui/imgui_tables.cpp
+        dependencies/imgui/imgui_widgets.cpp
+        dependencies/imgui/imgui_impl_win32.cpp
+        dependencies/imgui/imgui_impl_dx9.cpp
+        src/rbx/datamodel.cpp
+
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        WIN32_EXECUTABLE TRUE
+)
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+
+## General dependencies and imgui
+target_include_directories(
+        ${PROJECT_NAME} PRIVATE
+        ${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/"
+        ${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/imgui"
+)
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+
+## Lua
+
+target_include_directories(
+        ${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/lua/includes"
+)
+
+add_library(lua_static STATIC
+        dependencies/lua/core/state/lapi.c
+        dependencies/lua/parser/lcode.c
+        dependencies/lua/parser/lctype.c
+        dependencies/lua/core/debug/ldebug.c
+        dependencies/lua/core/vm/ldo.c
+        dependencies/lua/core/io/ldump.c
+        dependencies/lua/core/objects/lfunc.c
+        dependencies/lua/core/memory/lgc.c
+        dependencies/lua/parser/llex.c
+        dependencies/lua/core/memory/lmem.c
+        dependencies/lua/core/objects/lobject.c
+        dependencies/lua/parser/lopcodes.c
+        dependencies/lua/parser/lparser.c
+        dependencies/lua/core/state/lstate.c
+        dependencies/lua/lib/lstring.c
+        dependencies/lua/lib/ltable.c
+        dependencies/lua/core/objects/ltm.c
+        dependencies/lua/core/io/lundump.c
+        dependencies/lua/core/vm/lvm.c
+        dependencies/lua/core/io/lzio.c
+        dependencies/lua/includes/lauxlib.c
+        dependencies/lua/lib/lbaselib.c
+        dependencies/lua/lib/lcorolib.c
+        dependencies/lua/lib/ldblib.c
+        dependencies/lua/lib/liolib.c
+        dependencies/lua/lib/lmathlib.c
+        dependencies/lua/lib/loadlib.c
+        dependencies/lua/lib/loslib.c
+        dependencies/lua/lib/lstrlib.c
+        dependencies/lua/lib/ltablib.c
+        dependencies/lua/lib/lutf8lib.c
+        dependencies/lua/lib/linit.c
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+        lua_static
+        d3d9
+)
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################

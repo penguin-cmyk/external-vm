@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\external_vm.dir\\dependencies\\imgui\\imgui_impl_dx9.cpp.obj",
+            "outputs": [
+                "CMakeFiles\\external_vm.dir\\dependencies\\imgui\\imgui_impl_dx9.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

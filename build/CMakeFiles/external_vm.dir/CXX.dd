@@ -1,0 +1,29 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles\external_vm.dir\src\main.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\env\functions\rbx\game.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\env\functions\rbx\instance.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\env\functions\misc\cframe.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\env\functions\misc\vector3.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\ctx\globals.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\ui\gui.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\dependencies\imgui\imgui.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\dependencies\imgui\imgui_draw.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\dependencies\imgui\imgui_tables.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\dependencies\imgui\imgui_widgets.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\dependencies\imgui\imgui_impl_win32.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\dependencies\imgui\imgui_impl_dx9.cpp.obj: dyndep
+
+build CMakeFiles\external_vm.dir\src\rbx\datamodel.cpp.obj: dyndep
+

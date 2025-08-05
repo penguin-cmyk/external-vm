@@ -1,0 +1,4 @@
+C:/Users/sigma/CLionProjects/external-vm/build/CMakeFiles/external_vm.dir
+C:/Users/sigma/CLionProjects/external-vm/build/CMakeFiles/lua_static.dir
+C:/Users/sigma/CLionProjects/external-vm/build/CMakeFiles/edit_cache.dir
+C:/Users/sigma/CLionProjects/external-vm/build/CMakeFiles/rebuild_cache.dir

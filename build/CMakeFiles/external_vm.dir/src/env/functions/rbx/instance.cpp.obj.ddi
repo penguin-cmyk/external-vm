@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\external_vm.dir\\src\\env\\functions\\rbx\\instance.cpp.obj",
+            "outputs": [
+                "CMakeFiles\\external_vm.dir\\src\\env\\functions\\rbx\\instance.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

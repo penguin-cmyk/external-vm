@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\external_vm.dir\\src\\ctx\\globals.cpp.obj",
+            "outputs": [
+                "CMakeFiles\\external_vm.dir\\src\\ctx\\globals.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}
