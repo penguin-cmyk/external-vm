@@ -95,9 +95,8 @@ void WriteProperty(lua_State* L, uintptr_t addr, std::unordered_map<std::string,
                     addr = globals::mem->readMem<uintptr_t>(addr + property.mirrorOffset); // turn to primitive for stuff like part pos
                 }
 
-                globals::mem->writeMem<float>(addr + property.offset, vector->x);
-                globals::mem->writeMem<float>(addr + property.offset + 4, vector->y);
-                globals::mem->writeMem<float>(addr + property.offset + 8, vector->z);
+                vec3 vec = {vector->x, vector->y, vector->z};
+                globals::mem->writeMem<vec3>(addr + property.offset, vec);
             }
             break;
 
@@ -184,6 +183,6 @@ int ReadProperty(lua_State* L, uintptr_t addr, std::unordered_map<std::string, P
     }
 
     return 1;
-} 
+}
 
 #endif //EXTERNAL_LUA_PROPERTIES_H

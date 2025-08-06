@@ -1,7 +1,4 @@
 //
-// Created by sigma on 05/08/2025.
-//
-//
 // Created by sigma on 02/08/2025.
 //
 
