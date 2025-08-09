@@ -9,7 +9,7 @@
 
 *A memory-based recreation of Roblox's Luau environment*
 
-![Alt Text](https://cdn.discordapp.com/attachments/1340076499398819850/1402430718772117614/image.png?ex=6893e2e3&is=68929163&hm=8fab125e6d72b183401966619d3168da11222deeb0d77677c8ca331584455218&)
+![Alt Text](https://raw.githubusercontent.com/penguin-cmyk/penguin-cmyk/refs/heads/main/external%20vm.png)
 
 </div>
 
